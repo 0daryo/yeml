@@ -1,0 +1,17 @@
+bases:
+- ../../base
+patches:
+- deployment.yaml
+- service.yaml
+images:
+- name: asia.gcr.io/pj-queen-stg/github.com/0daryo/kustomize-lint
+  newTag: new
+- name: asia.gcr.io/pj-queen-stg/github.com/0daryo/hogehoge
+  newTag: new
+secretGenerator:
+- env: db-credentials.txt
+  name: db-credentials
+  type: Opaque
+- name: cloudsql-instance-credentials
+  files:
+  - credentials.json
