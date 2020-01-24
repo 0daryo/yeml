@@ -29,9 +29,7 @@ func main() {
 	}
 	fmt.Printf("%+v\n", conf)
 	for _, v := range conf.Images {
-		fmt.Println(v.NewTag)
 		v.NewTag = tag
-		fmt.Println(v.NewTag)
 	}
 	yaml, err := yaml.Marshal(&conf)
 	fmt.Println(string(yaml))
